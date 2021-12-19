@@ -19,7 +19,7 @@
           <a class="py-2 px-4 bg-main text-white rounded" href="./buku/tambah.php">Tambah Buku</a>
         </div>
         <!-- table -->
-        <table class="table mt-4">
+        <table class="table mt-4 text-center">
           <thead>
             <tr>
               <th scope="col">Judul</th>
@@ -39,7 +39,8 @@
                   echo '<td>' . ($item !== null ? 
                   htmlentities($item, ENT_QUOTES) : '(null)') . '</td>';
                 } ?>
-                <td><a href="./buku/edit.php">Edit</a> | <a href="#">hapus</a></td>
+                <td><button class="btn btn-warning btn-sm"><a href="./buku/edit.php">Edit</a></button>
+                <button class="btn btn-danger btn-sm"><a href="#">Hapus</a></button></td>
                 <?php
                 echo '</tr>';
               }
