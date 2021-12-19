@@ -28,6 +28,7 @@
               <th scope="col">Tahun</th>
               <th scope="col">ISBN</th>
               <th scope="col">No Buku</th>
+              <th scope="col">Aksi</th>
             </tr>
           </thead>
           <tbody>
@@ -37,7 +38,9 @@
                 foreach ($row as $item) {
                   echo '<td>' . ($item !== null ? 
                   htmlentities($item, ENT_QUOTES) : '(null)') . '</td>';
-                }
+                } ?>
+                <td><a href="./buku/edit.php">Edit</a> | <a href="#">hapus</a></td>
+                <?php
                 echo '</tr>';
               }
             ?>
