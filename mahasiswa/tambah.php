@@ -24,7 +24,7 @@
         <!-- Angakatan -->
         <div class="col mb-3 mx-2">
           <label for="angkatan" class="form-label">Angkatan</label>
-          <input required type="text" class="form-control" id="angkatan" name="angkatan">
+          <input required maxlength="4" type="text" class="form-control" id="angkatan" name="angkatan">
         </div>
         <!-- Kelas -->
         <div class="col mb-3 mx-2">
