@@ -4,11 +4,10 @@
 <body style="background: #004C3F;">
 
   <?php 
-    include('../lib/connection.php') ;
+    require('../lib/connection.php');
+    require('./queries.php');
 
-    $sql = ociparse($conn, "SELECT * 
-                            FROM PERPUSTAKAAN.MAHASISWA
-                            ORDER BY NAMA ASC");
+    $sql = ociparse($conn, $getMahasiswa);
     ociexecute($sql);
     $cols = oci_num_fields($sql);
   ?>

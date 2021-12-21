@@ -4,11 +4,10 @@
 <body style="background: #004C3F;">
 
   <?php 
-    include('../lib/connection.php') ;
+    require('../lib/connection.php') ;
+    require('./queries.php');
 
-    $sql = ociparse($conn, "SELECT * 
-                            FROM PERPUSTAKAAN.TRANSAKSI
-                            ORDER BY WAKTU_PINJAM DESC");
+    $sql = ociparse($conn, $getTransaksi);
     ociexecute($sql);
     $cols = oci_num_fields($sql);
   ?>
@@ -26,10 +25,11 @@
         <table class="table mt-4 text-center" >
           <thead>
             <tr>
-              <th scope="col">Buku ID</th>
-              <th scope="col">Mahasiswa ID</th>
               <th scope="col">Tanggal Pinjam</th>
               <th scope="col">Tanggal Kembali</th>
+              <th scope="col">Judul</th>
+              <th scope="col">Mahasiswa</th>
+              <th scope="col">NRP</th>
               <th scope="col">Aksi</th>
             </tr>
           </thead>

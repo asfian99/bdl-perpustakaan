@@ -3,11 +3,10 @@
 <?php require('../layout/head.php') ?>
 <body style="background: #004C3F;">
   <?php 
-    include('../lib/connection.php') ;
+    require('../lib/connection.php');
+    require('./queries.php');
 
-    $sql = ociparse($conn, "SELECT *
-                            FROM PERPUSTAKAAN.BUKU
-                            ORDER BY JUDUL ASC");
+    $sql = ociparse($conn, $getBuku);
     ociexecute($sql);
     $cols = oci_num_fields($sql);
   ?>
